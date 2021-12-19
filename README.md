@@ -1,12 +1,12 @@
 # Welcome to IT Farm
 
-[Visit this website, click here](https://buy-bicycle.web.app/).
+[Visit this website, click here](https://it-farm-1.web.app/).
 
 # Necessary information for this website
 
-1. It's one of kind ecommerce website.
+1. It's technology services website.
 
-2. Website Link : [https://buy-bicycle.web.app/](https://buy-bicycle.web.app/)
+2. Website Link : [https://it-farm-1.web.app/](https://it-farm-1.web.app/)
 
 3. Create this website by using :
 
