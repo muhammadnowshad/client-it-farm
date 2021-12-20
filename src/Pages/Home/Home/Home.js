@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import Service from '../Service/Service';
+import Services from '../Services/Services';
 import './Home.css'
 
 
@@ -17,25 +16,17 @@ const Home = () => {
     return (
         <div>
             {/* Top banner  */}
-            <div className='top-banner  d-flex align-items-center justify-content-center'>
+            <div className='top-banner d-flex align-items-center justify-content-center'>
                 <div>
-                <h2 className='banner-text text-white fs-1 p-4 rounded-3 '>Welcome to My BuyBicycle.Com</h2>
+                <h2 className='banner-text text-white fs-1 p-4 rounded-3 '>Welcome to My IT Farm</h2>
                 <div>
-                <Link to='Services'><button className='btn btn-danger w-25 py-2'>Explore</button></Link>
+                <Link to='/services'><button className='btn btn-danger w-25 py-2'>Explore</button></Link>
                 </div>
                 </div>
             </div>
 
             {/* Home services  */}
-            <div className='container my-5'>
-                <h1 className="text-danger mt-5">Our Products</h1>
-                <Row className="g-4">
-                {   
-                    datas.slice(0,6).map(datum => <Service key={datum.id} datum={datum}></Service>)
-                    
-                }
-                </Row>
-            </div>
+            <Services></Services>
             
             {/* about ourselves  */}
             <div className='container my-5'>

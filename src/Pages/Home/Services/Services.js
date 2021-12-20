@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Row } from 'react-bootstrap';
 import Service from '../Service/Service';
+import './Services.css'
 
 
 const Services = () => {
@@ -12,19 +13,21 @@ const Services = () => {
     },[]);
 
     return (
-        <div className='container py-5'>
-            <p>service</p>
-            <h1>Our Services</h1>
-            <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. It is a long established fact that a reader.</p>
+        <div className='service-bg py-5'>
+            <div className='container'>
+                <p>service</p>
+                <h1>Our Services</h1>
+                <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. It is a long established fact that a reader.</p>
 
-            <Row className="g-4">
-            
-                {   
-                    datas.map(datum => <Service key={datum.id} datum={datum}></Service>)
-                    
-                }
+                <Row className="g-4">
+                
+                    {   
+                        datas.map(datum => <Service key={datum.id} datum={datum}></Service>)
+                        
+                    }
 
-            </Row>
+                </Row>
+            </div>
         </div>
     );
 };

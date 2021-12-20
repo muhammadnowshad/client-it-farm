@@ -10,7 +10,7 @@ const Navigation = () => {
 
     return (
         <div className='my-navigation p-0 m-0'>
-            <nav className="navbar navbar-expand-lg navbar-light bg-danger">  
+            <nav className="navbar navbar-expand-lg navbar-light my-bg">  
                 <div className="container">
                     <span className="navbar-brand fs-3 text-white">IT Farm</span>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

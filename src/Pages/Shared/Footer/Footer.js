@@ -3,7 +3,7 @@ import './Footer.css'
 
 const Footer = () => {
     return (
-        <div className='container-fluid bg-danger py-2 text-center'>
+        <div className='container-fluid my-bg py-2 text-center'>
             <div className='fs-3'>
                 <i className="fab fa-facebook-square me-4 icons"></i>
                 <i className="fab fa-linkedin me-4 icons"></i>

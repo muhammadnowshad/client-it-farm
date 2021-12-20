@@ -1,6 +1,31 @@
 #my-icon{
-    color: blue;
-    font-size: 50px;
+    color: whitesmoke;
+    border-radius: 50%;
+    background-color: transparent;
+    background-image: linear-gradient(180deg, #0045FF 0%, #BD29F2 100%);
+    font-size: 40px;
+    width: 85px;
+    height: 85px;
     text-align: center;
-    padding: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.single-box {
+    background-color: #FFFFFF;
+    text-align: center;
+    border-radius: 20px 20px 20px 20px;
+    box-shadow: 0px 10px 20px 0px rgb(0 69 255 / 6%);
+    padding: 30px 10px 10px 10px;
+}
+
+.single-box:hover {
+    background-color: transparent;
+    background-image: linear-gradient(170deg, #0045FF 0%, #BD29F2 100%);;
+    opacity: 1;
+    transition: 0.6s;
+    transform: rotate(0deg) scale(1);
+    color: white;
 }
