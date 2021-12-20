@@ -28,18 +28,15 @@ const Navigation = () => {
                                 !admin?
                                 <li className="nav-item dropdown">
                                     <Link className="nav-link text-white " data-bs-toggle="dropdown" role="button" aria-expanded="false" to="/Dashboard">Dashboard</Link>
-                                    <ul className="dropdown-menu bg-danger ">
+                                    <ul className="dropdown-menu p-0">
                                         <li>
-                                            <Link className="dropdown-item nav-link text-white my-hover" to="/myOrder">My Orders</Link>
+                                            <Link className="dropdown-item nav-link  my-hover" to="/myOrder">My Orders</Link>
                                         </li>
                                         <li>
-                                            <Link className="dropdown-item nav-link text-white my-hover" to="/dashboard">Review</Link>
+                                            <Link className="dropdown-item nav-link  my-hover" to="/payment">Payment</Link>
                                         </li>
                                         <li>
-                                            <Link className="dropdown-item nav-link text-white my-hover" to="/payment">Payment</Link>
-                                        </li>
-                                        <li>
-                                            <Link className="dropdown-item nav-link text-white my-hover" onClick={logOut}  to="/home">Log Out</Link>
+                                            <Link className="dropdown-item nav-link  my-hover" onClick={logOut}  to="/home">Log Out</Link>
                                         </li>
                                     </ul>
                                 </li>

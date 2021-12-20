@@ -13,11 +13,10 @@ const Services = () => {
     },[]);
 
     return (
-        <div className='service-bg py-5'>
+        <div className='bg py-5'>
             <div className='container'>
-                <p>service</p>
-                <h1>Our Services</h1>
-                <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. It is a long established fact that a reader.</p>
+                <h1 className='mb-3'>Our Services</h1>
+                <p className='my-4 fs-4'>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. It is a long established fact that a reader.</p>
 
                 <Row className="g-4">
                 

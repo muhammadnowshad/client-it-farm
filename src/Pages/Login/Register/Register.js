@@ -30,10 +30,10 @@ const Register = () => {
     }
     
     return (
-        <div className='container col-12 col-md-6 mx-auto'>
-            <h2>Register</h2>
+        <div className='container col-12 col-md-6 mx-auto pt-3 pb-5'>
+            <h2 className="mb-4">Register</h2>
             {/* form  */}
-            { !isLoading && <form onSubmit={handleLoginSubmit} className=''>
+            { !isLoading && <form onSubmit={handleLoginSubmit} className='box p-3'>
                 <div className="mb-3 text-start">
                     <label htmlFor="exampleInputName1" className="form-label">Name</label>
                     <input onBlur={handleOnBlur} type="name" name='name' className="form-control" id="exampleInputName1" aria-describedby="emailHelp" required/>
@@ -50,8 +50,8 @@ const Register = () => {
                     <label htmlFor="exampleInputPassword1" className="form-label">Confirm Password</label>
                     <input onBlur={handleOnBlur} name='password2' type="password" className="form-control" id="exampleInputPassword2"/>
                 </div>
-                <button type="submit" className="mb-3 w-100 btn btn-primary">Register</button>
-                <Link  to='/login'><p>Already Register? Please Login</p></Link>
+                <button type="submit" className="mb-3 w-100 btn btn-danger">Register</button>
+                <Link  to='/login'><p className="text-white">Already Register? Please Login</p></Link>
             </form>}
 
             {isLoading && (<div className="spinner-border" role="status">
