@@ -14,7 +14,7 @@ const MakeAdmin = () => {
     }
     const handleAdminSubmit = e => {
         const user = { email };
-        fetch('http://localhost:5000/users/admin', {
+        fetch('https://polar-stream-41574.herokuapp.com/users/admin', {
             method: 'PUT',
             headers: {
                 'authorization': `Bearer ${token}`,
@@ -34,17 +34,21 @@ const MakeAdmin = () => {
         e.preventDefault()
     }
     return (
-        <div className='my-5'>
-            <h2>Make an Admin</h2>
-            <Form onSubmit={handleAdminSubmit} className="row mx-auto">
-                <Form.Group className="col-4 mb-3" controlId="formBasicEmail">
-                    <Form.Control onBlur={handleOnBlur}  type="email" placeholder="Enter email" />
-                </Form.Group>
-                <div className="col-2">
-                    <Button className="w-100" variant="primary" type="submit">Make Admin</Button>
+        <div className='bg py-5'>
+            <div className="container">
+                <h2 className="text-center">Make an Admin</h2>
+                <div className="col-12 col-md-8 mx-auto">
+                    <Form onSubmit={handleAdminSubmit} className="row g-4 mt-md-5 mt-2">
+                        <Form.Group className="col-12 col-md-8" controlId="formBasicEmail">
+                            <Form.Control className="py-2" onBlur={handleOnBlur}  type="email" placeholder="Enter email" />
+                        </Form.Group>
+                        <div className="col-12 col-md-4">
+                            <Button className="w-100 my-btn" variant="primary" type="submit">Make Admin</Button>
+                        </div>
+                    </Form>
+                    {success && <div className="alert alert-primary" role="alert">Admin Successfully!</div>}
                 </div>
-            </Form>
-            {success && <div className="alert alert-primary" role="alert">Admin Successfully!</div>}
+            </div>
         </div>
     );
 };

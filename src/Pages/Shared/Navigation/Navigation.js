@@ -36,19 +36,24 @@ const Navigation = () => {
                                             <Link className="dropdown-item nav-link  my-hover" to="/payment">Payment</Link>
                                         </li>
                                         <li>
-                                            <Link className="dropdown-item nav-link  my-hover" onClick={logOut}  to="/home">Log Out</Link>
+                                            {
+                                                user.email ?
+                                                <Link className="dropdown-item nav-link my-hover" onClick={logOut}  to="/home">Log Out</Link>
+                                                :
+                                                <Link className="nav-link nav-item my-hover" to="/login">Login</Link>
+                                            }
                                         </li>
                                     </ul>
                                 </li>
                                 :
                                 <li className="nav-item dropdown">
                                     <Link className="nav-link text-white " data-bs-toggle="dropdown" role="button" aria-expanded="false" to="/admin">Admin</Link>
-                                    <ul className="dropdown-menu bg-danger ">
+                                    <ul className="dropdown-menu p-0">
                                         <li>
-                                            <Link className="dropdown-item nav-link text-white my-hover" to="/manageOrder">Manage All Orders</Link>
+                                            <Link className="dropdown-item nav-link my-hover" to="/manageOrder">Manage All Orders</Link>
                                         </li>
                                         <li>
-                                            <Link className="dropdown-item nav-link text-white my-hover" to="/addProduct">Add Product</Link>
+                                            <Link className="dropdown-item nav-link my-hover" to="/addProduct">Add Product</Link>
                                         </li>
                                         <li>
                                             <Link className="dropdown-item nav-link text-white my-hover" to="/manageProduct">Manage All Products</Link>
@@ -57,7 +62,14 @@ const Navigation = () => {
                                             <Link className="dropdown-item nav-link text-white my-hover" to="/makeAdmin">Make Admin</Link>
                                         </li>
                                         <li>
-                                            <Link className="dropdown-item nav-link text-white my-hover" onClick={logOut}  to="/home">Log Out</Link>
+                                            {
+                                                user.email ?
+                                                <Link className="dropdown-item nav-link
+                                                my-hover" onClick={logOut}  to="/home">Log Out</Link>
+                                                :
+                                                <Link className="nav-link nav-item
+                                                my-hover" to="/login">Login</Link>
+                                            }
                                         </li>
                                     </ul>
                                 </li>

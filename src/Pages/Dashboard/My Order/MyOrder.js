@@ -8,7 +8,7 @@ const MyOrder = () => {
     const [orders, setOrders] = useState([]);
 
     useEffect(() => {
-        const url = `http://localhost:5000/orders?email=${user.email}`
+        const url = `https://polar-stream-41574.herokuapp.com/orders?email=${user.email}`
         fetch(url, {
             headers: {
                 'authorization': `Bearer ${token}`
@@ -21,7 +21,7 @@ const MyOrder = () => {
     const handleDeleteOrder = id => {
         const proceed = window.confirm('Are you sure, you want to cancel order?');
         if(proceed){
-            const url = `http://localhost:5000/orders/${id}`;
+            const url = `https://polar-stream-41574.herokuapp.com/orders/${id}`;
         fetch(url, {
             method: "DELETE"
         })

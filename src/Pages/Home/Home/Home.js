@@ -1,16 +1,17 @@
 import React, { useEffect, useState } from 'react';
+import { Card, Col, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import Services from '../Services/Services';
+
 import './Home.css'
 
 
 const Home = () => {
 
-    const [datas, setDatas] = useState([]);
+    const [services, setServices] = useState([]);
     useEffect (() => {
-        fetch("http://localhost:5000/services")
+        fetch("https://polar-stream-41574.herokuapp.com/services")
         .then(res => res.json())
-        .then(data => setDatas(data))
+        .then(data => setServices(data))
     },[]);
 
     return (
@@ -26,8 +27,31 @@ const Home = () => {
             </div>
 
             {/* Home services  */}
-            <Services></Services>
-            
+            <div className='bg py-5'>
+                <div className='container'>
+                    <h2>Our Services</h2>
+                <Row className="mt-3 g-4">
+                    {
+                        services.slice(0,6).map(service => <Col className='' key={service._id} lg={4} md={6} sm={12}>
+                            <Card className='single-box d-flex justify-content-center align-items-center'>
+                                <i id='my-icon' className={service.icon} ></i>
+                                <Card.Body>
+                                <Card.Title className='text-center pt-2'>{service.title}</Card.Title>
+                                <Card.Text className='text-center'>
+                                    {service.description}
+                                </Card.Text>
+                                <Card.Text className='text-center'>
+                                    ${service.price}
+                                </Card.Text>
+                                <Link to={`/orderPlace/${service._id}`}>
+                                    <Card.Text>Order Now</Card.Text>
+                                </Link>
+                                </Card.Body>
+                            </Card> 
+                    </Col>)}
+                </Row>
+                </div>
+            </div>
             {/* about ourselves  */}
             <div className='container my-5'>
                 <h1 className="text-danger mt-5">About Us</h1>

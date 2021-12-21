@@ -5,23 +5,23 @@ const ManageAllOrders = () => {
 
     const [orders, setOrders] = useState([]);
     useEffect( () => {
-        fetch('http://localhost:5000/orders')
+        fetch('https://polar-stream-41574.herokuapp.com/orders')
         .then(res => res.json())
         .then(data => setOrders(data))
     }, []);
 
    
     return (
-        <div className='container my-5'>
-            <div className='bg-light py-5'>
+        <div className='bg '>
+            <div className='container-md px-0 py-5'>
                 <div className=''>
-                    <h2 className='text-danger mb-4'>Manage All Orders</h2>
-                    <div  className='bg-danger col-12 col-md-8 mx-auto py-2'>
+                    <h2 className='mb-4'>Manage All Orders</h2>
+                    <div  className='box col-12 col-md-12 col-lg-10 mx-auto py-2'>
                         {
-                            orders.map(order => <div className='row align-items-center m-4 bg-light p-1' key={order._id}>
+                            orders.map(order => <div className='row align-items-center m-4 border-3 pt-2' key={order._id}>
                             <div className='col-12 col-md-6'>
                                 <h5>{order.name}</h5>
-                                <p className='mb-0 pb-1'>{order.email}</p>
+                                <p className='mb-0 pb-1 text-center'>{order.email}</p>
                                 <h6 className=''>Phone: {order.phone}</h6>
                             </div>
                             <div className='col-12 col-md-6'>

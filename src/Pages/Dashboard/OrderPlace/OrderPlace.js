@@ -12,7 +12,7 @@ const OrderPlace = () => {
     const [service, setService] = useState([]);
 
     useEffect( () => {
-        fetch(`http://localhost:5000/services/${serviceId}`)
+        fetch(`https://polar-stream-41574.herokuapp.com/services/${serviceId}`)
         .then(res => res.json())
         .then(data => setService(data))
     },[]);
@@ -24,7 +24,7 @@ const OrderPlace = () => {
     const onSubmit = data => {
         console.log(data);
     
-        axios.post('http://localhost:5000/orders', data)
+        axios.post('https://polar-stream-41574.herokuapp.com/orders', data)
         .then(res => {
             if(res.data.insertedId){
                 alert('Order processed Successfully');

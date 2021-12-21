@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react';
+import { Card, Col, Row } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 
 const ManageProduct = () => {
     const [services, setServices] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/services')
+        fetch('https://polar-stream-41574.herokuapp.com/services')
             .then(res => res.json())
             .then(data => setServices(data));
     }, []);
@@ -13,7 +15,7 @@ const ManageProduct = () => {
     const handleDeleteServices = id => {
         const proceed = window.confirm('Are you sure, you want to delete?');
         if(proceed){
-            const url = `http://localhost:5000/services/${id}`;
+            const url = `https://polar-stream-41574.herokuapp.com/services/${id}`;
         fetch(url, {
             method: "DELETE"
         })
@@ -29,26 +31,27 @@ const ManageProduct = () => {
     }
 
     return (
-        <div>
-        <div className='container my-5'>
-            <h1 className="text-danger mt-5">Manage Services</h1>
-            <div className="d-flex row my-3 g-4">
+        <div className='bg'>
+        <div className='container py-5'>
+            <h2 className="mb-5">Manage Services</h2>
+            <Row className="g-4">
                 {
-                    services.map(service => <div  key={service._id} className="col-lg-4 col-md-6 col-12 "><div className="card my-card h-100  bg-light">
-                    <div className='p-2'>
-                        <img src={service.img} className='rounded-3 service-img border card-img-top img-fluid' alt="" />
-                    </div>
-                    <div className="card-body">
-                        <h3>{service.title}</h3>
-                        <p className="text-start">{service.description}</p>
-                        <h5>Price BDT: {service.price}</h5>
-                    </div>
-                    <div className="card-footer pt-0 mb-2 bg-light border-0">
-                    <button className='w-100 btn btn-danger' onClick={() => handleDeleteServices(service._id)}>Delete</button>
-                    </div> 
-                </div>
-                </div>)}
-            </div>
+                    services.map(service => <Col className='' key={service._id} lg={4} md={6} sm={12}>
+                        <Card className='rounded-0 border-1 pt-4 d-flex justify-content-center align-items-center'>
+                            <i id='my-icon' className={service.icon} ></i>
+                            <Card.Body>
+                            <Card.Title className='text-center pt-2'>{service.title}</Card.Title>
+                            <Card.Text className='text-center'>
+                                {service.description}
+                            </Card.Text>
+                            <Card.Text className='fw-bold text-center'>
+                                ${service.price}
+                            </Card.Text>
+                            </Card.Body>
+                            <button className='w-100 my-btn' onClick={() => handleDeleteServices(service._id)}>Delete</button>
+                        </Card> 
+                </Col>)}
+            </Row>
         </div>
     </div>
     );

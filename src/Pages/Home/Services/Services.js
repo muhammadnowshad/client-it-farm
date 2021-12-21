@@ -7,7 +7,7 @@ import './Services.css'
 const Services = () => {
     const [datas, setDatas] = useState([]);
     useEffect (() => {
-        fetch("http://localhost:5000/services")
+        fetch("https://polar-stream-41574.herokuapp.com/services")
         .then(res => res.json())
         .then(data => setDatas(data))
     },[]);
@@ -15,8 +15,8 @@ const Services = () => {
     return (
         <div className='bg py-5'>
             <div className='container'>
-                <h1 className='mb-3'>Our Services</h1>
-                <p className='my-4 fs-4'>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. It is a long established fact that a reader.</p>
+                <h2 className='mb-3'>Our Services</h2>
+                <p className='my-4 fs-5'>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. It is a long established fact that a reader.</p>
 
                 <Row className="g-4">
                 

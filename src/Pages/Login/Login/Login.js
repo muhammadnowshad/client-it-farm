@@ -49,7 +49,7 @@ const Login = () => {
 
             {isLoading && (<div className="spinner-border" role="status"><span className="visually-hidden">Loading...</span></div>)}
 
-            {user?.email && (<div className="alert alert-primary" role="alert">Login Successfully!</div>)}
+            {user?.email && (<div className="mt-3 alert alert-primary" role="alert">Login Successfully!</div>)}
 
             {authError && (<div className="alert alert-danger" role="alert">{authError}</div>)}
 
